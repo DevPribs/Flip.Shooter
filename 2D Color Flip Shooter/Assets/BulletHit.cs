@@ -19,6 +19,13 @@ public class BulletHit : MonoBehaviour {
         {
             Destroy(col.gameObject);
         }
-        print(col.gameObject.name);
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.name == "BoundsWall")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
