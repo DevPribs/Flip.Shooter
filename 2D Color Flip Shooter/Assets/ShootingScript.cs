@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ShootingScript : MonoBehaviour {
 
+    public float BulletSpeed = 100f;
+
     GameObject bulletItem;
     Vector2 currentPosition;
     Vector3 pointingDirection;
@@ -29,7 +31,9 @@ public class ShootingScript : MonoBehaviour {
             {
                 angle += Mathf.PI;
             }
-            transform.rotation = Quaternion.AngleAxis((angle*180)/Mathf.PI, Vector3.forward); 
+            transform.rotation = Quaternion.AngleAxis((angle*180)/Mathf.PI, Vector3.forward);
+
+            currentPosition = currentPosition.normalized;
 
             //Vector3 lastPositionV3 = new Vector3(currentPosition.x, currentPosition.y);
             //pointingDirection = (lastPositionV3 - transform.position).normalized;
@@ -42,7 +46,7 @@ public class ShootingScript : MonoBehaviour {
                 GameObject bulletObject = Instantiate(bulletItem) as GameObject;
                 bulletObject.transform.position = transform.position;
                 Rigidbody2D rigidbody = bulletObject.GetComponent<Rigidbody2D>();
-                rigidbody.AddForce(rigidbody.transform.eulerAngles * 0.1f);
+                rigidbody.AddForce(currentPosition * BulletSpeed);
             }
         }
         //if(Input.GetMouseButtonDown(0))
