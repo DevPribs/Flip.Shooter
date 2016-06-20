@@ -4,13 +4,9 @@ using System.Collections;
 
 public class BulletHit : MonoBehaviour {
 
-    Text text;
-    int score = 0;
-
 	// Use this for initialization
 	void Start () {
 
-        text = GameObject.Find("Score").GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
@@ -23,8 +19,7 @@ public class BulletHit : MonoBehaviour {
         if(col.gameObject.name == "Enemy")
         {
             Destroy(col.gameObject);
-            score += 10;
-            text.text = "" + score;
+            GameObject.Find("GameManager").GetComponent<Score>().AddScore(10);
             Destroy(this.gameObject);
         }
     }
