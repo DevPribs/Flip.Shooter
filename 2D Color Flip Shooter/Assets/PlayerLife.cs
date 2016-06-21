@@ -20,7 +20,7 @@ public class PlayerLife : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.name == ("Enemy"))
+        if(col.gameObject.name == ("Enemy")|| col.gameObject.name == ("Enemy(Clone)"))
         {
             life--;
             Destroy(col.gameObject);

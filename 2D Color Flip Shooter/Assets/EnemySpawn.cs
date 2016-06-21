@@ -1,0 +1,70 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class EnemySpawn : MonoBehaviour {
+
+    public GameObject enemy;
+    public float spawnTime = 3f;
+    GameObject enemySpawn1;
+    GameObject enemySpawn2;
+    GameObject enemySpawn3;
+    GameObject enemySpawn4;
+
+    // Use this for initialization
+    void Start () {
+
+        enemySpawn1 = GameObject.Find("EnemySpawn1");
+        enemySpawn2 = GameObject.Find("EnemySpawn2");
+        enemySpawn3 = GameObject.Find("EnemySpawn3");
+        enemySpawn4 = GameObject.Find("EnemySpawn4");
+
+        InvokeRepeating("SpawnEnemy", spawnTime, spawnTime);
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+
+    void SpawnEnemy()
+    {
+        int enemySpawnBox = Random.Range(1, 5);
+        float x;
+        float y;
+        float spawnx;
+        float spawny;
+        Vector3 spawn;
+
+        switch (enemySpawnBox)
+        {
+            case (1):
+                y = enemySpawn1.GetComponent<SpriteRenderer>().bounds.size.y;
+                spawny = Random.Range(0, y);
+                spawny += enemySpawn1.transform.position.y;
+                spawn = new Vector3(enemySpawn1.GetComponent<SpriteRenderer>().bounds.center.x, spawny);
+                Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0));
+                break;
+            case (2):
+                x = enemySpawn2.GetComponent<SpriteRenderer>().bounds.size.x;
+                spawnx = Random.Range(0, x);
+                spawnx += enemySpawn2.transform.position.x;
+                spawn = new Vector3(spawnx, enemySpawn2.GetComponent<SpriteRenderer>().bounds.center.y);
+                Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0));
+                break;
+            case (3):
+                y = enemySpawn3.GetComponent<SpriteRenderer>().bounds.size.y;
+                spawny = Random.Range(0, y);
+                spawny += enemySpawn3.transform.position.y;
+                spawn = new Vector3(enemySpawn3.GetComponent<SpriteRenderer>().bounds.center.x, spawny);
+                Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0));
+                break;
+            case (4):
+                x = enemySpawn4.GetComponent<SpriteRenderer>().bounds.size.x;
+                spawnx = Random.Range(0, x);
+                spawnx += enemySpawn4.transform.position.x;
+                spawn = new Vector3(spawnx, enemySpawn4.GetComponent<SpriteRenderer>().bounds.center.y);
+                Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0));
+                break;
+        }
+    }
+}
