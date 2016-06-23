@@ -5,12 +5,16 @@ using System.Collections;
 public class PlayerLife : MonoBehaviour {
 
     public int life = 5;
+    int lifeLeft;
     Text text;
+    GameOver gameOver;
 
 	// Use this for initialization
 	void Start () {
+        lifeLeft = life;
         text = GameObject.Find("Lifes").GetComponent<Text>();
-        text.text = "Life: " + life;
+        text.text = "Life: " + lifeLeft;
+        gameOver = GameObject.Find("GameManager").GetComponent<GameOver>();
     }
 	
 	// Update is called once per frame
@@ -22,9 +26,18 @@ public class PlayerLife : MonoBehaviour {
     {
         if(col.gameObject.name == ("Enemy")|| col.gameObject.name == ("Enemy(Clone)"))
         {
-            life--;
+            lifeLeft--;
             Destroy(col.gameObject);
-            text.text = "Life: " + life;
+            text.text = "Life: " + lifeLeft;
+            if(lifeLeft == 0)
+            {
+                gameOver.Dead();
+            }
         }
+    }
+
+    public void Reset()
+    {
+        lifeLeft = life;
     }
 }

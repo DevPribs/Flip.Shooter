@@ -67,4 +67,14 @@ public class EnemySpawn : MonoBehaviour {
                 break;
         }
     }
+
+    public void stopEnemySpawn()
+    {
+        CancelInvoke();
+    }
+
+    public void startEnemySpawn()
+    {
+        InvokeRepeating("SpawnEnemy", spawnTime, spawnTime);
+    }
 }

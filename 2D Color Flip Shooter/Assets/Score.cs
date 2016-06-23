@@ -35,4 +35,11 @@ public class Score : MonoBehaviour {
             multiplier++;
         }
     }
+
+    public void Reset()
+    {
+        score = 0;
+        text.text = "" + score;
+        multiplierSlide.value = 0;
+    }
 }
