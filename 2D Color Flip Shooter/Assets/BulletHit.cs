@@ -16,7 +16,7 @@ public class BulletHit : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.name == "Enemy")
+        if(col.gameObject.name == "Enemy" && col.gameObject.GetComponent<Renderer>().material.color == gameObject.GetComponent<Renderer>().material.color)
         {
             Destroy(col.gameObject);
             GameObject.Find("GameManager").GetComponent<Score>().AddScore(10);

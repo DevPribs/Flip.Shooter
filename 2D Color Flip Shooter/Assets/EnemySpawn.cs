@@ -5,6 +5,8 @@ public class EnemySpawn : MonoBehaviour {
 
     public GameObject enemy;
     public float spawnTime = 3f;
+
+    Color currentColor;
     GameObject enemySpawn1;
     GameObject enemySpawn2;
     GameObject enemySpawn3;
@@ -34,6 +36,7 @@ public class EnemySpawn : MonoBehaviour {
         float spawnx;
         float spawny;
         Vector3 spawn;
+        GameObject enemyClone;
 
         switch (enemySpawnBox)
         {
@@ -42,28 +45,32 @@ public class EnemySpawn : MonoBehaviour {
                 spawny = Random.Range(0, y);
                 spawny += enemySpawn1.transform.position.y;
                 spawn = new Vector3(enemySpawn1.GetComponent<SpriteRenderer>().bounds.center.x, spawny);
-                Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0));
+                enemyClone = Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0)) as GameObject;
+                enemyClone.GetComponent<Renderer>().material.color = currentColor;
                 break;
             case (2):
                 x = enemySpawn2.GetComponent<SpriteRenderer>().bounds.size.x;
                 spawnx = Random.Range(0, x);
                 spawnx += enemySpawn2.transform.position.x;
                 spawn = new Vector3(spawnx, enemySpawn2.GetComponent<SpriteRenderer>().bounds.center.y);
-                Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0));
+                enemyClone = Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0)) as GameObject;
+                enemyClone.GetComponent<Renderer>().material.color = currentColor;
                 break;
             case (3):
                 y = enemySpawn3.GetComponent<SpriteRenderer>().bounds.size.y;
                 spawny = Random.Range(0, y);
                 spawny += enemySpawn3.transform.position.y;
                 spawn = new Vector3(enemySpawn3.GetComponent<SpriteRenderer>().bounds.center.x, spawny);
-                Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0));
+                enemyClone = Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0)) as GameObject;
+                enemyClone.GetComponent<Renderer>().material.color = currentColor;
                 break;
             case (4):
                 x = enemySpawn4.GetComponent<SpriteRenderer>().bounds.size.x;
                 spawnx = Random.Range(0, x);
                 spawnx += enemySpawn4.transform.position.x;
                 spawn = new Vector3(spawnx, enemySpawn4.GetComponent<SpriteRenderer>().bounds.center.y);
-                Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0));
+                enemyClone = Instantiate(enemy, spawn, new Quaternion(0, 0, 0, 0)) as GameObject;
+                enemyClone.GetComponent<Renderer>().material.color = currentColor;
                 break;
         }
     }
@@ -76,5 +83,10 @@ public class EnemySpawn : MonoBehaviour {
     public void startEnemySpawn()
     {
         InvokeRepeating("SpawnEnemy", spawnTime, spawnTime);
+    }
+
+    public void changeColor(Color color)
+    {
+        currentColor = color;
     }
 }

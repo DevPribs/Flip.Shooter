@@ -5,6 +5,7 @@ public class ShootingScript : MonoBehaviour {
 
     public float BulletSpeed = 100f;
 
+    Color currentColor;
     GameObject bulletItem;
     Vector2 currentPosition;
     Vector3 pointingDirection;
@@ -44,6 +45,7 @@ public class ShootingScript : MonoBehaviour {
             if(touch.phase == TouchPhase.Ended)
             {
                 GameObject bulletObject = Instantiate(bulletItem) as GameObject;
+                bulletObject.GetComponent<Renderer>().material.color = currentColor;
                 bulletObject.transform.position = transform.position;
                 Rigidbody2D rigidbody = bulletObject.GetComponent<Rigidbody2D>();
                 rigidbody.AddForce(currentPosition * BulletSpeed);
@@ -58,4 +60,9 @@ public class ShootingScript : MonoBehaviour {
         //}
 	
 	}
+
+    public void changeColor(Color color)
+    {
+        currentColor = color;
+    }
 }
