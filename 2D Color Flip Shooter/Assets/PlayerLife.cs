@@ -39,5 +39,6 @@ public class PlayerLife : MonoBehaviour {
     public void Reset()
     {
         lifeLeft = life;
+        text.text = "Life: " + lifeLeft;
     }
 }

@@ -25,6 +25,11 @@ public class GameOver : MonoBehaviour {
     {
         enemySpawn.stopEnemySpawn();
         MTP.Pause();
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;

@@ -4,7 +4,8 @@ using System.Collections;
 
 public class Score : MonoBehaviour {
 
-    Text text;
+    Text scoreText;
+    Text gameOverScoreText;
     int score = 0;
     double multiplier = 1;
     Slider multiplierSlide;
@@ -13,7 +14,8 @@ public class Score : MonoBehaviour {
     void Start()
     {
 
-        text = GameObject.Find("Score").GetComponent<Text>();
+        scoreText = GameObject.Find("Score").GetComponent<Text>();
+        gameOverScoreText = GameObject.Find("GameOverScore").GetComponent<Text>();
         multiplierSlide = GameObject.Find("MultiplierSlide").GetComponent<Slider>();
         multiplierSlide.value = 0;
     }
@@ -27,7 +29,8 @@ public class Score : MonoBehaviour {
     public void AddScore(int points)
     {
         score += (int)((double)points * multiplier);
-        text.text = "" + score;
+        scoreText.text = "" + score;
+        gameOverScoreText.text = "Score: " + score;
         multiplierSlide.value += 10;
         if(multiplierSlide.value == 100)
         {
@@ -39,7 +42,9 @@ public class Score : MonoBehaviour {
     public void Reset()
     {
         score = 0;
-        text.text = "" + score;
+        scoreText.text = "" + score;
+        gameOverScoreText.text = "Score: " + score;
         multiplierSlide.value = 0;
+        multiplier = 1;
     }
 }
