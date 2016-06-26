@@ -19,8 +19,6 @@ public class EnemySpawn : MonoBehaviour {
         enemySpawn2 = GameObject.Find("EnemySpawn2");
         enemySpawn3 = GameObject.Find("EnemySpawn3");
         enemySpawn4 = GameObject.Find("EnemySpawn4");
-
-        InvokeRepeating("SpawnEnemy", spawnTime, spawnTime);
 	}
 	
 	// Update is called once per frame
