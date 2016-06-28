@@ -11,7 +11,7 @@ public class MoveTowardsPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = GameObject.Find("Player");
-        background = GameObject.Find("Background").GetComponent<Renderer>();
+        background = GameObject.Find("MainBackground").GetComponent<Renderer>();
         enemy = this.GetComponent<Renderer>();
         pause = false;
     }

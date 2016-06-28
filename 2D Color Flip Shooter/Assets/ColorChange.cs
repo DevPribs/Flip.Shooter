@@ -13,7 +13,7 @@ public class ColorChange : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        background = GameObject.Find("Background");
+        background = GameObject.Find("MainBackground");
         shootingScript = GameObject.Find("Player").GetComponent<ShootingScript>();
         enemySpawn = GameObject.Find("EnemyManager").GetComponent<EnemySpawn>();
         shootingScript.changeColor(color2);
