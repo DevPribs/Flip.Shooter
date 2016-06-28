@@ -16,7 +16,7 @@ public class ColorChange : MonoBehaviour {
         background = GameObject.Find("Background");
         shootingScript = GameObject.Find("Player").GetComponent<ShootingScript>();
         enemySpawn = GameObject.Find("EnemyManager").GetComponent<EnemySpawn>();
-        shootingScript.changeColor(color1);
+        shootingScript.changeColor(color2);
         enemySpawn.changeColor(color1);
         background.GetComponent<Renderer>().material.color = color2;
     }
@@ -26,18 +26,18 @@ public class ColorChange : MonoBehaviour {
 	
 	}
 
-    void ChangeColor()
+    public void ChangeColor()
     {
         if(currentColor == 2)
         {
-            shootingScript.changeColor(color2);
+            shootingScript.changeColor(color1);
             enemySpawn.changeColor(color2);
             background.GetComponent<Renderer>().material.color = color1;
             currentColor = 1;
         }
         else
         {
-            shootingScript.changeColor(color1);
+            shootingScript.changeColor(color2);
             enemySpawn.changeColor(color1);
             background.GetComponent<Renderer>().material.color = color2;
             currentColor = 2;

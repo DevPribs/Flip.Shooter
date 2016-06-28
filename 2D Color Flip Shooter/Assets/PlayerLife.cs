@@ -8,6 +8,7 @@ public class PlayerLife : MonoBehaviour {
     int lifeLeft;
     Text text;
     GameOver gameOver;
+    Score score;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +16,7 @@ public class PlayerLife : MonoBehaviour {
         text = GameObject.Find("Lifes").GetComponent<Text>();
         text.text = "Life: " + lifeLeft;
         gameOver = GameObject.Find("GameManager").GetComponent<GameOver>();
+        score = GameObject.Find("GameManager").GetComponent<Score>();
     }
 	
 	// Update is called once per frame
@@ -24,11 +26,12 @@ public class PlayerLife : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.name == ("Enemy")|| col.gameObject.name == ("Enemy(Clone)"))
+        if(col.gameObject.tag == "Enemy")
         {
             lifeLeft--;
             Destroy(col.gameObject);
             text.text = "Life: " + lifeLeft;
+            score.ResetMultiplier();
             if(lifeLeft == 0)
             {
                 gameOver.Dead();

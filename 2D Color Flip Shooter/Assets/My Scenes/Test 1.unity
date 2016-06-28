@@ -1326,10 +1326,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 185628666}
   m_RootOrder: 5
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -523, y: 0}
-  m_SizeDelta: {x: 138, y: 290}
+  m_AnchorMin: {x: 0, y: 0.263}
+  m_AnchorMax: {x: 0.082494505, y: 0.73700005}
+  m_AnchoredPosition: {x: 0.5, y: 0}
+  m_SizeDelta: {x: 1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &859347754
 MonoBehaviour:
@@ -1369,7 +1369,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 859347755}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 997011597}
+        m_MethodName: ChangeColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &859347755
@@ -1384,15 +1395,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 0
+  m_Color: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7937e126d36760147a00d006b32def64, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1417,7 +1428,7 @@ GameObject:
   - 114: {fileID: 912004108}
   - 114: {fileID: 912004107}
   m_Layer: 5
-  m_Name: SwichButton
+  m_Name: SwitchButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1436,10 +1447,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 185628666}
   m_RootOrder: 6
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 532.94, y: 0}
-  m_SizeDelta: {x: 138, y: 290}
+  m_AnchorMin: {x: 0.9144302, y: 0.263}
+  m_AnchorMax: {x: 0.9982579, y: 0.73700005}
+  m_AnchoredPosition: {x: 0.5, y: 0}
+  m_SizeDelta: {x: -1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &912004107
 MonoBehaviour:
@@ -1479,7 +1490,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 912004108}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 997011597}
+        m_MethodName: ChangeColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &912004108
@@ -1494,15 +1516,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7937e126d36760147a00d006b32def64, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1632,7 +1654,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7937e126d36760147a00d006b32def64, type: 3}
-  m_Color: {r: 0.71626294, g: 0.7058823, b: 0.7136141, a: 1}
+  m_Color: {r: 0.98550725, g: 0.9897698, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!4 &983950618
@@ -1806,7 +1828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 0, b: 0, a: 1}
-  color2: {r: 0, g: 0, b: 0, a: 1}
+  color2: {r: 0.39705884, g: 0.39705884, b: 0.39705884, a: 1}
 --- !u!114 &997011598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1846,7 +1868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 199478, guid: be965f6a6f1b1114d9a956804e0edd96, type: 2}
-  spawnTime: 0.31
+  spawnTime: 1
 --- !u!4 &1005337048
 Transform:
   m_ObjectHideFlags: 0
@@ -2362,7 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1b68329a9fe0a4480643062ee14a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 150
+  BulletSpeed: 250
 --- !u!114 &1486447308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2415,11 +2437,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 477022, guid: be965f6a6f1b1114d9a956804e0edd96, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.78
+      value: 5.29
       objectReference: {fileID: 0}
     - target: {fileID: 477022, guid: be965f6a6f1b1114d9a956804e0edd96, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 477022, guid: be965f6a6f1b1114d9a956804e0edd96, type: 2}
       propertyPath: m_LocalPosition.z
