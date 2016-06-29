@@ -703,7 +703,7 @@ RectTransform:
   - {fileID: 1518312061}
   - {fileID: 991018051}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -860,6 +860,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 211435900}
   - 114: {fileID: 211435901}
+  - 114: {fileID: 211435902}
   m_Layer: 5
   m_Name: RedSlider
   m_TagString: Untagged
@@ -933,9 +934,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1529827734}
+        m_MethodName: updateDataNumber
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 211435901}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &211435902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 211435899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d740fa52a65014ead725cead102a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &237070354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1044,7 @@ GameObject:
   - 222: {fileID: 266975916}
   - 114: {fileID: 266975915}
   - 114: {fileID: 266975914}
+  - 114: {fileID: 266975917}
   m_Layer: 5
   m_Name: Green
   m_TagString: Untagged
@@ -1085,14 +1109,14 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 266975915}
   m_TextComponent: {fileID: 1399801059}
   m_Placeholder: {fileID: 0}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
-  m_CharacterLimit: 0
+  m_CharacterValidation: 1
+  m_CharacterLimit: 4
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -1100,7 +1124,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 615019753}
+        m_MethodName: updateSliderNumber
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 266975914}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.InputField, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
@@ -1143,6 +1178,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 266975912}
+--- !u!114 &266975917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 266975912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e2f323f51e24d429a0dedf23f1f765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &271098867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,7 +1576,7 @@ RectTransform:
   - {fileID: 79879430}
   - {fileID: 1924440300}
   m_Father: {fileID: 991018051}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 290, y: -200}
@@ -1970,7 +2016,7 @@ Transform:
   - {fileID: 1348177944}
   - {fileID: 424535292}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
 --- !u!1 &615019750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,6 +2026,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 615019751}
   - 114: {fileID: 615019752}
+  - 114: {fileID: 615019753}
   m_Layer: 5
   m_Name: GreenSlider
   m_TagString: Untagged
@@ -2053,9 +2100,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 266975917}
+        m_MethodName: updateDataNumber
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 615019752}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &615019753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 615019750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d740fa52a65014ead725cead102a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &635074255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,7 +2230,7 @@ RectTransform:
   - {fileID: 266975913}
   - {fileID: 985058350}
   m_Father: {fileID: 991018051}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2230,7 +2299,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 691213455}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -2932,6 +3001,7 @@ GameObject:
   - 222: {fileID: 985058353}
   - 114: {fileID: 985058352}
   - 114: {fileID: 985058351}
+  - 114: {fileID: 985058354}
   m_Layer: 5
   m_Name: Blue
   m_TagString: Untagged
@@ -2996,14 +3066,14 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 985058352}
   m_TextComponent: {fileID: 1865870951}
   m_Placeholder: {fileID: 0}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
-  m_CharacterLimit: 0
+  m_CharacterValidation: 1
+  m_CharacterLimit: 4
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -3011,7 +3081,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1409148707}
+        m_MethodName: updateSliderNumber
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 985058351}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.InputField, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
@@ -3054,6 +3135,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 985058349}
+--- !u!114 &985058354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 985058349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e2f323f51e24d429a0dedf23f1f765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &987684416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,8 +3269,8 @@ RectTransform:
   - {fileID: 1126830742}
   - {fileID: 68584821}
   - {fileID: 522772421}
-  - {fileID: 691213456}
   - {fileID: 535809821}
+  - {fileID: 691213456}
   m_Father: {fileID: 185628666}
   m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
@@ -4321,6 +4413,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 1409148705}
   - 114: {fileID: 1409148706}
+  - 114: {fileID: 1409148707}
   m_Layer: 5
   m_Name: BlueSlider
   m_TagString: Untagged
@@ -4394,9 +4487,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 985058354}
+        m_MethodName: updateDataNumber
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1409148706}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1409148707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1409148704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d740fa52a65014ead725cead102a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1431505875
 GameObject:
   m_ObjectHideFlags: 0
@@ -5000,6 +5115,7 @@ GameObject:
   - 222: {fileID: 1529827733}
   - 114: {fileID: 1529827732}
   - 114: {fileID: 1529827731}
+  - 114: {fileID: 1529827734}
   m_Layer: 5
   m_Name: Red
   m_TagString: Untagged
@@ -5064,14 +5180,14 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1529827732}
   m_TextComponent: {fileID: 1467234552}
   m_Placeholder: {fileID: 0}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
-  m_CharacterLimit: 0
+  m_CharacterValidation: 1
+  m_CharacterLimit: 4
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -5079,7 +5195,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 211435902}
+        m_MethodName: updateSliderNumber
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1529827731}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.InputField, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
@@ -5122,6 +5249,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1529827729}
+--- !u!114 &1529827734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1529827729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e2f323f51e24d429a0dedf23f1f765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1557197602
 GameObject:
   m_ObjectHideFlags: 0
