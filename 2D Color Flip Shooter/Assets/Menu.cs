@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Menu : MonoBehaviour {
 
+    CanvasGroup settingMenuCanvas;
     CanvasGroup gameOverCanvas;
     CanvasGroup mainMenuCanvas;
     EnemySpawn enemySpawn;
@@ -12,6 +13,7 @@ public class Menu : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
+        settingMenuCanvas = GameObject.Find("SettingMenuCanvas").GetComponent<CanvasGroup>();
         gameOverCanvas = GameObject.Find("GameOverCanvas").GetComponent<CanvasGroup>();
         mainMenuCanvas = GameObject.Find("MainMenuCanvas").GetComponent<CanvasGroup>();
         enemySpawn = GameObject.Find("EnemyManager").GetComponent<EnemySpawn>();
@@ -49,5 +51,19 @@ public class Menu : MonoBehaviour {
         mainMenuCanvas.alpha = 0;
         mainMenuCanvas.interactable = false;
         mainMenuCanvas.blocksRaycasts = false;
+    }
+
+    public void SettingButton()
+    {
+        settingMenuCanvas.alpha = 1;
+        settingMenuCanvas.interactable = true;
+        settingMenuCanvas.blocksRaycasts = true;
+    }
+
+    public void SettingBackButton()
+    {
+        settingMenuCanvas.alpha = 0;
+        settingMenuCanvas.interactable = false;
+        settingMenuCanvas.blocksRaycasts = false;
     }
 }

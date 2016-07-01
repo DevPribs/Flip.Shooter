@@ -14,6 +14,7 @@ public class ColorManager : MonoBehaviour {
     Color textColor2;
     int currentColorChange = 0;
     CanvasGroup colorPickerCanvas;
+    ColorChange colorChangeScript;
 
     Image background1;
     Image background2;
@@ -23,11 +24,17 @@ public class ColorManager : MonoBehaviour {
     Image enemy2;
     Text text1;
     Text text2;
+    Slider r;
+    Slider g;
+    Slider b;
 
 	// Use this for initialization
 	void Start () {
-        testColor1 = new Color(0, 0, 0);
-        testColor2 = new Color(0, 0, 0);
+        colorChangeScript = GameObject.Find("GameManager").GetComponent<ColorChange>();
+        color1 = colorChangeScript.getColor1();
+        color2 = colorChangeScript.getColor2();
+        testColor1 = color1;
+        testColor2 = color2;
         testTextColor1 = new Color(0, 0, 0);
         testTextColor2 = new Color(0, 0, 0);
         colorPickerCanvas = GameObject.Find("ColorPickerCanvas").GetComponent<CanvasGroup>();
@@ -39,6 +46,17 @@ public class ColorManager : MonoBehaviour {
         enemy2 = GameObject.Find("EnemyTest2").GetComponent<Image>();
         text1 = GameObject.Find("TextTest1").GetComponent<Text>();
         text2 = GameObject.Find("TextTest2").GetComponent<Text>();
+        r = GameObject.Find("RedSlider").GetComponent<Slider>();
+        g = GameObject.Find("GreenSlider").GetComponent<Slider>();
+        b = GameObject.Find("BlueSlider").GetComponent<Slider>();
+
+        background1.color = color1;
+        background2.color = color2;
+        bullet1.color = color2;
+        bullet2.color = color1;
+        enemy1.color = color2;
+        enemy2.color = color1;
+
     }
 
     // Update is called once per frame
@@ -69,9 +87,11 @@ public class ColorManager : MonoBehaviour {
         {
             case (1):
                 color1 = testColor1;
+                colorChangeScript.setColor1(color1);
                 break;
             case (2):
                 color2 = testColor2;
+                colorChangeScript.setColor2(color2);
                 break;
             case (3):
                 textColor1 = testTextColor1;
@@ -85,7 +105,7 @@ public class ColorManager : MonoBehaviour {
         colorPickerCanvas.blocksRaycasts = false;
     }
 
-    public void changeRed(Slider r)
+    public void changeRed()
     {
         switch (currentColorChange)
         {
@@ -105,7 +125,7 @@ public class ColorManager : MonoBehaviour {
         objectSetColor();
     }
 
-    public void changeGreen(Slider g)
+    public void changeGreen()
     {
         switch (currentColorChange)
         {
@@ -125,7 +145,7 @@ public class ColorManager : MonoBehaviour {
         objectSetColor();
     }
 
-    public void changeBlue(Slider b)
+    public void changeBlue()
     {
         switch (currentColorChange)
         {

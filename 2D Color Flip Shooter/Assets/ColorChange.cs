@@ -44,4 +44,27 @@ public class ColorChange : MonoBehaviour {
         }
         
     }
+
+    public void setColor1(Color color)
+    {
+        color1 = color;
+        enemySpawn.changeColor(color1);
+    }
+
+    public void setColor2(Color color)
+    {
+        color2 = color;
+        shootingScript.changeColor(color2);
+        background.GetComponent<Renderer>().material.color = color2;
+    }
+
+    public Color getColor1()
+    {
+        return color1;
+    }
+
+    public Color getColor2()
+    {
+        return color2;
+    }
 }
