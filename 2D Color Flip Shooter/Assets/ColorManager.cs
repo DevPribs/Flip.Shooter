@@ -95,9 +95,11 @@ public class ColorManager : MonoBehaviour {
                 break;
             case (3):
                 textColor1 = testTextColor1;
+                colorChangeScript.setTextColor1(textColor1);
                 break;
             case (4):
                 textColor2 = testTextColor2;
+                colorChangeScript.setTextColor2(textColor2);
                 break;
         }
         colorPickerCanvas.alpha = 0;

@@ -81,6 +81,21 @@ public class EnemySpawn : MonoBehaviour {
     public void startEnemySpawn()
     {
         InvokeRepeating("SpawnEnemy", spawnTime, spawnTime);
+        InvokeRepeating("increaseEnemySpawn", 10, 10);
+    }
+
+    void increaseEnemySpawn()
+    {
+
+        float increasedSpawn = 0.1f;
+
+        CancelInvoke("SpawnEnemy");
+
+        spawnTime -= increasedSpawn;
+
+        InvokeRepeating("SpawnEnemy", 0, spawnTime);
+
+
     }
 
     public void changeColor(Color color)

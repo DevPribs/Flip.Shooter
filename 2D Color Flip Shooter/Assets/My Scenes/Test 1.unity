@@ -3650,6 +3650,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 0, b: 0, a: 1}
   color2: {r: 0.39705884, g: 0.39705884, b: 0.39705884, a: 1}
+  textColor1: {r: 0, g: 0, b: 0, a: 1}
+  textColor2: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &997011598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5143,7 +5145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5517df8a5b4782946935ea54261cc347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 5
+  life: 2523
 --- !u!50 &1486447309
 Rigidbody2D:
   serializedVersion: 2
