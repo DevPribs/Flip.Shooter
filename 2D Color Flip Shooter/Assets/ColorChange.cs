@@ -15,6 +15,7 @@ public class ColorChange : MonoBehaviour {
     EnemySpawn enemySpawn;
     Text lifes;
     Text score;
+    SaveData saveDataScript;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,16 @@ public class ColorChange : MonoBehaviour {
         enemySpawn = GameObject.Find("EnemyManager").GetComponent<EnemySpawn>();
         lifes = GameObject.Find("Lifes").GetComponent<Text>();
         score = GameObject.Find("Score").GetComponent<Text>();
+        saveDataScript = GameObject.Find("GameManager").GetComponent<SaveData>();
+
+        if(saveDataScript.loaded)
+        {
+            color1 = saveDataScript.getColor1();
+            color2 = saveDataScript.getColor2();
+            textColor1 = saveDataScript.getTextColor1();
+            textColor2 = saveDataScript.getTextColor2();
+        }
+
         shootingScript.changeColor(color2);
         enemySpawn.changeColor(color1);
         background.GetComponent<Renderer>().material.color = color2;
@@ -93,5 +104,15 @@ public class ColorChange : MonoBehaviour {
     public Color getColor2()
     {
         return color2;
+    }
+
+    public Color getTextColor1()
+    {
+        return textColor1;
+    }
+
+    public Color getTextColor2()
+    {
+        return textColor2;
     }
 }

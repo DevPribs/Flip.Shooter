@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1258,15 +1258,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9558824, g: 0.9558824, b: 0.9558824, a: 0.478}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.797}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7937e126d36760147a00d006b32def64, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2614,7 +2614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3590,6 +3590,7 @@ GameObject:
   - 114: {fileID: 997011596}
   - 114: {fileID: 997011597}
   - 114: {fileID: 997011598}
+  - 114: {fileID: 997011599}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -3663,6 +3664,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908bf38924b464e4185bc6ec38fe497f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &997011599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 997011593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e52bf697804db94e9de42014f4ab4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color1: {r: 0, g: 0, b: 0, a: 0}
+  color2: {r: 0, g: 0, b: 0, a: 0}
+  textColor1: {r: 0, g: 0, b: 0, a: 0}
+  textColor2: {r: 0, g: 0, b: 0, a: 0}
+  highScores: 
+  loaded: 0
 --- !u!1 &1005337046
 GameObject:
   m_ObjectHideFlags: 0
@@ -5145,7 +5163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5517df8a5b4782946935ea54261cc347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 2523
+  life: 5
 --- !u!50 &1486447309
 Rigidbody2D:
   serializedVersion: 2

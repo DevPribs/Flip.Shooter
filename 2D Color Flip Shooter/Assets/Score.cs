@@ -53,4 +53,9 @@ public class Score : MonoBehaviour {
         multiplierSlide.value = 0;
         multiplier = 1;
     }
+
+    public void save()
+    {
+
+    }
 }

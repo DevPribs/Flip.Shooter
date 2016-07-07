@@ -15,6 +15,7 @@ public class ColorManager : MonoBehaviour {
     int currentColorChange = 0;
     CanvasGroup colorPickerCanvas;
     ColorChange colorChangeScript;
+    SaveData saveDataScript;
 
     Image background1;
     Image background2;
@@ -31,12 +32,13 @@ public class ColorManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         colorChangeScript = GameObject.Find("GameManager").GetComponent<ColorChange>();
+        saveDataScript = GameObject.Find("GameManager").GetComponent<SaveData>();
         color1 = colorChangeScript.getColor1();
         color2 = colorChangeScript.getColor2();
         testColor1 = color1;
         testColor2 = color2;
-        testTextColor1 = new Color(0, 0, 0);
-        testTextColor2 = new Color(0, 0, 0);
+        testTextColor1 = colorChangeScript.getTextColor1();
+        testTextColor2 = colorChangeScript.getTextColor2();
         colorPickerCanvas = GameObject.Find("ColorPickerCanvas").GetComponent<CanvasGroup>();
         background1 = GameObject.Find("BackgroundTest1").GetComponent<Image>();
         background2 = GameObject.Find("BackgroundTest2").GetComponent<Image>();
@@ -87,18 +89,22 @@ public class ColorManager : MonoBehaviour {
         {
             case (1):
                 color1 = testColor1;
+                saveDataScript.color1 = testColor1;
                 colorChangeScript.setColor1(color1);
                 break;
             case (2):
                 color2 = testColor2;
+                saveDataScript.color2 = testColor2;
                 colorChangeScript.setColor2(color2);
                 break;
             case (3):
                 textColor1 = testTextColor1;
+                saveDataScript.textColor1 = testTextColor1;
                 colorChangeScript.setTextColor1(textColor1);
                 break;
             case (4):
                 textColor2 = testTextColor2;
+                saveDataScript.textColor2 = testTextColor2;
                 colorChangeScript.setTextColor2(textColor2);
                 break;
         }
