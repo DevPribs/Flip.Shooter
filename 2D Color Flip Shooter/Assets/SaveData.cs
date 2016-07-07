@@ -24,7 +24,7 @@ public class SaveData : MonoBehaviour {
 
     void OnEnable()
     {
-        load();
+        loadPlayerData();
         print("Applicaton was enabled");
     }
 
@@ -35,38 +35,39 @@ public class SaveData : MonoBehaviour {
 
     void OnDisable()
     {
-        save();
+        savePlayerData();
         print("Application was disabled");
     }
 
-    void save()
+    void savePlayerData()
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/playerData.dat");
 
         PlayerData playerData = new PlayerData();
-        playerData.color1 = color1;
-        playerData.color2 = color2;
-        playerData.textColor1 = textColor1;
-        playerData.textColor2 = textColor2;
+        playerData.color1 = new SerializableColor(color1);
+        playerData.color2 = new SerializableColor(color2);
+        playerData.textColor1 = new SerializableColor(textColor1);
+        playerData.textColor2 = new SerializableColor(textColor2);
         playerData.highScores = highScores;
 
         binaryFormatter.Serialize(file, playerData);
         file.Close();
     }
 
-    void load()
+    void loadPlayerData()
     {
         if(File.Exists(Application.persistentDataPath + "/playerData.dat"))
         {
+            print(Application.persistentDataPath);
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
             PlayerData playerData = (PlayerData)binaryFormatter.Deserialize(file);
             file.Close();
-            color1 = playerData.color1;
-            color2 = playerData.color2;
-            textColor1 = playerData.textColor1;
-            textColor2 = playerData.textColor2;
+            color1 = playerData.color1.GetColor();
+            color2 = playerData.color2.GetColor();
+            textColor1 = playerData.textColor1.GetColor();
+            textColor2 = playerData.textColor2.GetColor();
             highScores = playerData.highScores;
             loaded = true;
         }
@@ -97,10 +98,32 @@ public class SaveData : MonoBehaviour {
 [System.Serializable]
 class PlayerData
 {
-    public Color color1;
-    public Color color2;
-    public Color textColor1;
-    public Color textColor2;
+    public SerializableColor color1;
+    public SerializableColor color2;
+    public SerializableColor textColor1;
+    public SerializableColor textColor2;
 
     public int[] highScores;
+}
+
+[System.Serializable]
+class SerializableColor
+{
+    public float r;
+    public float g;
+    public float b;
+    public float a;
+
+    public SerializableColor(Color color)
+    {
+        r = color.r;
+        g = color.g;
+        b = color.b;
+        a = color.a;
+    }
+
+    public Color GetColor()
+    {
+        return new Color(r, g, b, a);
+    }
 }
