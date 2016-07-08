@@ -9,7 +9,7 @@ public class SaveData : MonoBehaviour {
     public Color color2;
     public Color textColor1;
     public Color textColor2;
-    public int[] highScores;
+    public int highScore = 0;
     public bool loaded = false;
 
     // Use this for initialization
@@ -49,7 +49,7 @@ public class SaveData : MonoBehaviour {
         playerData.color2 = new SerializableColor(color2);
         playerData.textColor1 = new SerializableColor(textColor1);
         playerData.textColor2 = new SerializableColor(textColor2);
-        playerData.highScores = highScores;
+        playerData.highScore = highScore;
 
         binaryFormatter.Serialize(file, playerData);
         file.Close();
@@ -68,7 +68,7 @@ public class SaveData : MonoBehaviour {
             color2 = playerData.color2.GetColor();
             textColor1 = playerData.textColor1.GetColor();
             textColor2 = playerData.textColor2.GetColor();
-            highScores = playerData.highScores;
+            highScore = playerData.highScore;
             loaded = true;
         }
     }
@@ -103,7 +103,7 @@ class PlayerData
     public SerializableColor textColor1;
     public SerializableColor textColor2;
 
-    public int[] highScores;
+    public int highScore;
 }
 
 [System.Serializable]

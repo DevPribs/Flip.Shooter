@@ -33,7 +33,13 @@ public class ColorChange : MonoBehaviour {
             textColor1 = saveDataScript.getTextColor1();
             textColor2 = saveDataScript.getTextColor2();
         }
-
+        else
+        {
+            saveDataScript.color1 = color1;
+            saveDataScript.color2 = color2;
+            saveDataScript.textColor1 = textColor1;
+            saveDataScript.textColor2 = textColor2;
+        }
         shootingScript.changeColor(color2);
         enemySpawn.changeColor(color1);
         background.GetComponent<Renderer>().material.color = color2;
