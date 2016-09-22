@@ -37,8 +37,10 @@ public class ColorManager : MonoBehaviour {
         color2 = colorChangeScript.getColor2();
         testColor1 = color1;
         testColor2 = color2;
-        testTextColor1 = colorChangeScript.getTextColor1();
-        testTextColor2 = colorChangeScript.getTextColor2();
+        textColor1 = colorChangeScript.getTextColor1();
+        textColor2 = colorChangeScript.getTextColor2();
+        testTextColor1 = textColor1;
+        testTextColor2 = textColor2;
         colorPickerCanvas = GameObject.Find("ColorPickerCanvas").GetComponent<CanvasGroup>();
         background1 = GameObject.Find("BackgroundTest1").GetComponent<Image>();
         background2 = GameObject.Find("BackgroundTest2").GetComponent<Image>();
@@ -58,6 +60,8 @@ public class ColorManager : MonoBehaviour {
         bullet2.color = color1;
         enemy1.color = color2;
         enemy2.color = color1;
+        text1.color = textColor1;
+        text2.color = textColor2;
 
     }
 
@@ -70,6 +74,29 @@ public class ColorManager : MonoBehaviour {
     public void colorChangeSelection(int x)
     {
         currentColorChange = x;
+        switch(x)
+        {
+            case (1):
+                r.value = color1.r * 255;
+                g.value = color1.g * 255;
+                b.value = color1.b * 255;
+                break;
+            case (2):
+                r.value = color2.r * 255;
+                g.value = color2.g * 255;
+                b.value = color2.b * 255;
+                break;
+            case (3):
+                r.value = textColor1.r * 255;
+                g.value = textColor1.g * 255;
+                b.value = textColor1.b * 255;
+                break;
+            case (4):
+                r.value = textColor2.r * 255;
+                g.value = textColor2.g * 255;
+                b.value = textColor2.b * 255;
+                break;
+        }
         colorPickerCanvas.alpha = 1;
         colorPickerCanvas.interactable = true;
         colorPickerCanvas.blocksRaycasts = true;

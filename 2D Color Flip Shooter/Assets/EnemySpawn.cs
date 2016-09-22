@@ -5,6 +5,7 @@ public class EnemySpawn : MonoBehaviour {
 
     public GameObject enemy;
     public float spawnTime = 3f;
+    private float changedSpawnTime;
 
     Color currentColor;
     GameObject enemySpawn1;
@@ -19,7 +20,9 @@ public class EnemySpawn : MonoBehaviour {
         enemySpawn2 = GameObject.Find("EnemySpawn2");
         enemySpawn3 = GameObject.Find("EnemySpawn3");
         enemySpawn4 = GameObject.Find("EnemySpawn4");
-	}
+
+        changedSpawnTime = spawnTime;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -82,6 +85,7 @@ public class EnemySpawn : MonoBehaviour {
     {
         InvokeRepeating("SpawnEnemy", spawnTime, spawnTime);
         InvokeRepeating("increaseEnemySpawn", 10, 10);
+        changedSpawnTime = spawnTime;
     }
 
     void increaseEnemySpawn()
@@ -91,9 +95,9 @@ public class EnemySpawn : MonoBehaviour {
 
         CancelInvoke("SpawnEnemy");
 
-        spawnTime -= increasedSpawn;
+        changedSpawnTime -= increasedSpawn;
 
-        InvokeRepeating("SpawnEnemy", 0, spawnTime);
+        InvokeRepeating("SpawnEnemy", 0, changedSpawnTime);
 
 
     }

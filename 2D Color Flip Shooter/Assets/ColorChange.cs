@@ -9,7 +9,7 @@ public class ColorChange : MonoBehaviour {
     public Color textColor1;
     public Color textColor2;
 
-    int currentColor = 1;
+    int currentColor = 2;
     GameObject background;
     ShootingScript shootingScript;
     EnemySpawn enemySpawn;
